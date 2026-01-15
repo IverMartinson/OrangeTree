@@ -9,28 +9,37 @@ void* OT_get_last(void* operand);
 // - Takes in any element of the list
 void* OT_get_first(void* operand);
 
-// - Removes an element from the linked list and frees it
+// - Removes an element from the linked list
 // - Takes in specific element of the list
 void OT_drop(void* operand);
 
+// - Removes an element from the linked list and frees it
+// - Takes in specific element of the list
+void OT_erase(void* operand);
+
 // - Adds an element to the end of a linked list
-// - Takes in any element of the list
+// - Takes in any element of the list and an element to add to the list
 void OT_append(void* operand, void* appendee);
 
 // - Adds and element to the beginning of a linked list
-// - Takes in any element of the list
+// - Takes in any element of the list and an element to add to the list
 void OT_prepend(void* operand, void* prependee);
 
 // - Adds an element to the left of an element in a linked list
-// - Takes in specific element of the list
+// - Takes in specific element of the list and an element to add to the list
 void OT_insert_left(void* operand, void* insertee);
 
 // - Adds an element to the right of an element in a linked list
-// - Takes in specific element of the list
+// - Takes in specific element of the list and an element to add to the list
 void OT_insert_right(void* operand, void* insertee);
 
 // - Frees entire list
 // - Takes in any element of the list
 void OT_free(void* operand);
+
+// - Runs `(*user_function)` for every element in the linked list
+// - Takes in any element of the list, a pointer that will be passed into the `user_function`, and `user_function`
+// - `user_function` must be in the form `void func(void* operand, void* user_pointer)`
+void OT_iterate(void* operand, void* user_pointer, void (*user_function)(void*, void*));
 
 #endif

@@ -1,5 +1,7 @@
--added all basic function of linked list (i didn't do any research so im assuming this is how it works)
--(also i havent tested this at all so idk if it works. lets push to prod!)
--wrote comments in OT_functions.h
--added etymology
--added how-to
+-added example program
+-added OT_iterate function
+-tested everything (it works on my machine, let's push to prod!)
+-added OT_erase
+-OT_drop now doesn't free operand
+-updated makefile
+-fixed logic error in OT_free
