@@ -1,7 +1,1 @@
--added example program
--added OT_iterate function
--tested everything (it works on my machine, let's push to prod!)
--added OT_erase
--OT_drop now doesn't free operand
--updated makefile
--fixed logic error in OT_free
+-added safeguard for if void operand

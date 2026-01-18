@@ -41,6 +41,12 @@ void OT_erase(void* operand){
 }
 
 void OT_append(void* operand, void* appendee){
+    if (!operand){
+        operand = appendee;
+
+        return;
+    }
+
     struct OT_operand* app = (struct OT_operand*)appendee;
     
     struct OT_operand* last_element = (struct OT_operand*)OT_get_last(operand);
@@ -50,6 +56,12 @@ void OT_append(void* operand, void* appendee){
 }
 
 void OT_prepend(void* operand, void* prependee){
+    if (!operand){
+        operand = prependee;
+
+        return;
+    }
+
     struct OT_operand* pre = (struct OT_operand*)prependee;
     
     struct OT_operand* first_element = (struct OT_operand*)OT_get_first(operand);
@@ -59,6 +71,12 @@ void OT_prepend(void* operand, void* prependee){
 }
 
 void OT_insert_left(void* operand, void* insertee){
+    if (!operand){
+        operand = insertee;
+
+        return;
+    }
+
     struct OT_operand* oper = (struct OT_operand*)operand;
     struct OT_operand* ins = (struct OT_operand*)insertee;
 
@@ -72,6 +90,12 @@ void OT_insert_left(void* operand, void* insertee){
 }
 
 void OT_insert_right(void* operand, void* insertee){
+    if (!operand){
+        operand = insertee;
+
+        return;
+    }
+
     struct OT_operand* oper = (struct OT_operand*)operand;
     struct OT_operand* ins = (struct OT_operand*)insertee;
 
@@ -99,7 +123,7 @@ void OT_free(void* operand){
 void OT_iterate(void* operand, void* user_pointer, void (*user_function)(void*, void*)){
     struct OT_operand* cur_oper = (struct OT_operand*)OT_get_first(operand);
 
-     while (cur_oper){
+    while (cur_oper){
         struct OT_operand* next = (struct OT_operand*)(cur_oper->OT_next);
         
         (*user_function)(cur_oper, user_pointer);
