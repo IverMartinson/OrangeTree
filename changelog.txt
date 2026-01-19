@@ -1,1 +1,1 @@
--added safeguard for if void operand
+-if user_function in OT_iterate returns -1, loop breaks

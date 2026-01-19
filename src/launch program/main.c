@@ -7,10 +7,12 @@ typedef struct {
     char* string;
 } blahblahblah;
 
-void iteration_function(void* operand, void* user_pointer){
+int iteration_function(void* operand, void* user_pointer){
     blahblahblah* oper = (blahblahblah*)(operand);
     
     printf(oper->string);
+
+    return 0;
 }
 
 int main(){
